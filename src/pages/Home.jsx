@@ -1,8 +1,12 @@
 import React from 'react'
+import Topbar from '../components/Topbar'
 
 const Home = () => {
   return (
-    <div>Salut</div>
+    <div>
+      <Topbar />
+      Salut
+    </div>
   )
 }
 
