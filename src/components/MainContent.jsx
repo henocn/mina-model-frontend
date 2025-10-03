@@ -41,8 +41,8 @@ const MainContent = () => {
         <div className="flex items-center justify-between px-6 py-3">
           <span className="text-lg font-bold text-gray-900">MinaModel</span>
           <div className="flex space-x-6 text-gray-800">
-            <a href="#" className="hover:text-purple-700 font-medium">Generate</a>
-            <a href="#" className="hover:text-purple-700 font-medium">Teams</a>
+            <a href="#" className="hover:text-purple-700 font-medium">Conversation</a>
+            <a href="#" className="hover:text-purple-700 font-medium">Équipe</a>
           </div>
           <div className="w-9 h-9 rounded-full bg-purple-500 flex items-center justify-center text-white">
             <User size={18} />
@@ -52,12 +52,12 @@ const MainContent = () => {
 
       {/* Cadre du chat (scrollable seulement ici) */}
       <div className="flex-1 flex justify-center mt-[64px] mb-[80px] overflow-hidden">
-        <div className="flex flex-col w-full max-w-2xl overflow-y-auto px-4 space-y-4 border border-purple-200 rounded-lg bg-white shadow-sm">
+        <div className="flex flex-col pt-4 w-full max-w-2xl overflow-y-auto px-4 space-y-4 border border-gray-400 rounded-lg bg-gray-100 shadow-sm">
           {messages.map((msg, idx) =>
             msg.role === "user" ? (
               <div key={idx} className="flex justify-end">
                 <div className="flex items-end space-x-2 max-w-[70%]">
-                  <div className="bg-purple-200 text-gray-900 px-4 py-2 rounded-2xl shadow-sm">
+                  <div className="bg-purple-200 text-gray-900 px-4 py-2 rounded-2xl border-[1px] border-purple-300 shadow-sm">
                     {msg.content}
                   </div>
                   <div className="w-9 h-9 rounded-full bg-purple-400 flex items-center justify-center text-white">
@@ -67,7 +67,7 @@ const MainContent = () => {
               </div>
             ) : (
               <div key={idx} className="flex justify-start">
-                <div className="flex items-center space-x-2 max-w-[70%]">
+                <div className="flex items-center space-x-2 max-w-[70%] border border-purple-300 rounded-lg p-2 bg-white shadow-sm">
                   <div className="w-9 h-9 rounded-full bg-gray-300 flex items-center justify-center text-gray-800">
                     <Cpu size={18} />
                   </div>
