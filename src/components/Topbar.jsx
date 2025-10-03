@@ -7,7 +7,6 @@ export default function Topbar() {
 
   return (
     <header className="w-full border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-gray-700 via-purple-700 to-gray-700 dark:from-gray-700 dark:via-purple-800 dark:to-gray-700 text-white px-6 py-2 flex items-center justify-between shadow-md">
-      {/* Logo / Nom */}
       <div className="text-xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
         MinaModel
       </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { User, Cpu, Play } from "lucide-react";
+import { User, Cpu, Play } from "lucide-react"; // Remplacement Robot par Cpu
 
 const chatHistory = [
   { role: "user", content: "Salut, comment ça va ?" },
@@ -35,28 +35,41 @@ const MainContent = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen w-full bg-gray-200 p-4">
-      <div className="flex-1 overflow-y-auto flex justify-center p-2">
-        <div className="flex flex-col w-full max-w-2xl space-y-4 border border-purple-300 rounded-xl p-4 bg-black/20 shadow-sm">
+    <div className="h-screen flex flex-col bg-gray-50">
+      {/* Topbar FIXED */}
+      <div className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-purple-300 to-blue-300 shadow-md">
+        <div className="flex items-center justify-between px-6 py-3">
+          <span className="text-lg font-bold text-gray-900">MinaModel</span>
+          <div className="flex space-x-6 text-gray-800">
+            <a href="#" className="hover:text-purple-700 font-medium">Generate</a>
+            <a href="#" className="hover:text-purple-700 font-medium">Teams</a>
+          </div>
+          <div className="w-9 h-9 rounded-full bg-purple-500 flex items-center justify-center text-white">
+            <User size={18} />
+          </div>
+        </div>
+      </div>
+
+      {/* Cadre du chat (scrollable seulement ici) */}
+      <div className="flex-1 flex justify-center mt-[64px] mb-[80px] overflow-hidden">
+        <div className="flex flex-col w-full max-w-2xl overflow-y-auto px-4 space-y-4 border border-purple-200 rounded-lg bg-white shadow-sm">
           {messages.map((msg, idx) =>
             msg.role === "user" ? (
               <div key={idx} className="flex justify-end">
                 <div className="flex items-end space-x-2 max-w-[70%]">
-                  <div className="flex flex-col items-end">
-                    <div className="bg-purple-200 text-gray-900 px-4 py-2 rounded-2xl shadow-sm">
-                      {msg.content}
-                    </div>
+                  <div className="bg-purple-200 text-gray-900 px-4 py-2 rounded-2xl shadow-sm">
+                    {msg.content}
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-purple-400 flex items-center justify-center text-white">
-                    <User size={20} />
+                  <div className="w-9 h-9 rounded-full bg-purple-400 flex items-center justify-center text-white">
+                    <User size={18} />
                   </div>
                 </div>
               </div>
             ) : (
               <div key={idx} className="flex justify-start">
                 <div className="flex items-center space-x-2 max-w-[70%]">
-                  <div className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-gray-800">
-                    <Cpu size={20} />
+                  <div className="w-9 h-9 rounded-full bg-gray-300 flex items-center justify-center text-gray-800">
+                    <Cpu size={18} />
                   </div>
                   <div className="bg-gray-200 px-4 py-2 rounded-2xl shadow-sm flex items-center space-x-2 w-full">
                     <button className="w-8 h-8 bg-purple-400 rounded-full flex items-center justify-center text-white hover:bg-purple-500">
@@ -65,9 +78,6 @@ const MainContent = () => {
                     <div className="flex-1 h-3 bg-gray-300 rounded-full overflow-hidden relative">
                       <div className="absolute left-0 top-0 h-full w-1/2 bg-purple-400 animate-pulse rounded-full"></div>
                     </div>
-                    <audio controls className="hidden">
-                      <source src={msg.audio} type="audio/mpeg" />
-                    </audio>
                   </div>
                 </div>
               </div>
@@ -77,7 +87,8 @@ const MainContent = () => {
         </div>
       </div>
 
-      <div className="w-full border-t border-purple-300 bg-white p-4 flex justify-center shadow-md">
+      {/* Input FIXE en bas */}
+      <div className="fixed bottom-0 left-0 w-full bg-white border-t border-purple-200 shadow-md flex justify-center p-4">
         <div className="flex w-full max-w-2xl space-x-2">
           <input
             type="text"
