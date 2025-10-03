@@ -100,7 +100,7 @@ const MainContent = () => {
           />
           <button
             onClick={handleSend}
-            className="px-5 py-3 bg-purple-400 text-white rounded-xl hover:bg-purple-500 font-semibold shadow-md"
+            className="px-5 py-3 border border-gray-500 bg-purple-400 text-white rounded-xl hover:bg-purple-500 font-semibold shadow-md"
           >
             Envoyer
           </button>

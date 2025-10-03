@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Sun, Moon, ChevronDown, LogOut, Settings } from "lucide-react";
+import { Sun, Moon, ChevronDown } from "lucide-react";
 
 export default function Topbar() {
   const [darkMode, setDarkMode] = useState(false);
