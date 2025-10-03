@@ -41,8 +41,8 @@ const MainContent = () => {
         <div className="flex items-center justify-between px-6 py-3">
           <span className="text-lg font-bold text-gray-900">MinaModel</span>
           <div className="flex space-x-6 text-gray-800">
-            <a href="#" className="hover:text-purple-700 font-medium">Conversation</a>
-            <a href="#" className="hover:text-purple-700 font-medium">Équipe</a>
+            <a href="#" className="hover:text-purple-700 font-medium border border-gray-700/40 py-1 px-2 rounded">Conversation</a>
+            <a href="#" className="hover:text-purple-700 font-medium border border-gray-700/40 py-1 px-2 rounded">Équipe</a>
           </div>
           <div className="w-9 h-9 rounded-full bg-purple-500 flex items-center justify-center text-white">
             <User size={18} />
